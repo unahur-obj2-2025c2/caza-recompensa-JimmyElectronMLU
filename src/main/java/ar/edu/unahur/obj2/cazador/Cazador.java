@@ -3,8 +3,8 @@ package ar.edu.unahur.obj2.cazador;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unahur.obj2.Zona;
 import ar.edu.unahur.obj2.profugo.Profugo;
+import ar.edu.unahur.obj2.zona.Zona;
 
 public abstract class Cazador {
     protected Integer experiencia;
@@ -39,32 +39,26 @@ public abstract class Cazador {
     public abstract void intimidacionEspecifica(Profugo profugo);
 
     public void procesoDeCaptura(Zona unaZona) {
-        List<Profugo> intimidados = new ArrayList<>(); 
+        List<Profugo> intimidados = new ArrayList<>();
+        List<Profugo> aCapturar = new ArrayList<>(); 
         unaZona.getProfugos().stream().forEach(profugo -> { if (puedeCapturar(profugo)){
-            capturarEnZona(profugo, unaZona);
+            aCapturar.add(profugo);
         } else {
             intimidar(profugo);
             intimidados.add(profugo);
-        }
+        }}
+        );
+        capturados.addAll(aCapturar);
+        unaZona.getProfugos().removeAll(aCapturar);
         incrementarExperiencia(intimidados);
-    });
     }
 
-    private void capturarEnZona(Profugo unProfugo, Zona unaZona) {
-        unaZona.quitarProfugo(unProfugo); 
-        capturados.add(unProfugo);
-    }
-
-    private void incrementarExperiencia(List<Profugo> intimidados) {
+    protected void incrementarExperiencia(List<Profugo> intimidados) {
         if (!intimidados.isEmpty()) {
         Integer minimaHabilidad = intimidados.stream().mapToInt(p -> p.getHabilidad()).min().getAsInt(); // en vez de if, tambien podria utilizar .orElse(0);
         this.experiencia += minimaHabilidad + capturados.size() * 2;
         } else {
             this.experiencia += capturados.size() * 2;
         }
-    }
-
-    public int obtenerExperiencia() {
-        return this.experiencia;    
     }
 }  

@@ -1,4 +1,4 @@
-package ar.edu.unahur.obj2;
+package ar.edu.unahur.obj2.zona;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,10 +23,14 @@ public class Zona {
     }
     
     public void aniadirProfugo(Profugo unProfugo){
-        profugos.add(unProfugo);
+        if (!profugos.contains(unProfugo)) {
+            profugos.add(unProfugo); 
+        }
     }
 
     public void quitarProfugo(Profugo unProfugo){
-        profugos.remove(unProfugo);
+        if (profugos.contains(unProfugo)) {
+            profugos.remove(unProfugo);    
+        }
     }
 }

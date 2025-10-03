@@ -1,6 +1,5 @@
-package ar.edu.unahur.obj2.cazador;
+package ar.edu.unahur.obj2.cazadorTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -8,8 +7,9 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.unahur.obj2.Zona;
+import ar.edu.unahur.obj2.cazador.*;
 import ar.edu.unahur.obj2.profugo.Profugo;
+import ar.edu.unahur.obj2.zona.Zona;
 
 public class CazadorTest {
     @Test
@@ -37,6 +37,6 @@ public class CazadorTest {
         Zona z = new Zona("este",new ArrayList<>());
         z.aniadirProfugo(p);
         c.procesoDeCaptura(z);
-        assertTrue(c.obtenerExperiencia() > 75);
+        assertTrue(c.getExperiencia() > 75);
     }
 }

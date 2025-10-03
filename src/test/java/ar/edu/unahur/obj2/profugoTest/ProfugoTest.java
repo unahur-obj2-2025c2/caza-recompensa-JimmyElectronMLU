@@ -1,9 +1,11 @@
-package ar.edu.unahur.obj2.profugo;
+package ar.edu.unahur.obj2.profugoTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unahur.obj2.profugo.Profugo;
 
 public class ProfugoTest {
     @Test
