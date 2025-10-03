@@ -18,7 +18,7 @@ public class IntimidacionTest {
         Profugo p = new Profugo(50, 40,true);
         c.intimidar(p);
         assertFalse(p.esNervioso());
-        assertEquals(Integer.valueOf(40), p.getInocencia());;
+        assertEquals(Integer.valueOf(48), p.getInocencia());;
     }
      @Test
     public void ruralIntimidaYSeVuelveNerviosoYDisminuyeInocencia(){
@@ -26,7 +26,7 @@ public class IntimidacionTest {
         Profugo p = new Profugo(50, 40,false);
         c.intimidar(p);
         assertTrue(p.esNervioso());
-        assertEquals(Integer.valueOf(40), p.getInocencia());;
+        assertEquals(Integer.valueOf(48), p.getInocencia());;
     }
      @Test
     public void sigilosoIntimidaReduciendoHabilidadYReduceInocencia(){

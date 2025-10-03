@@ -3,9 +3,9 @@ package ar.edu.unahur.obj2.profugo;
 public class Profugo implements IProfugo{
     private Integer inocencia;
     private Integer habilidad;
-    private boolean esNervioso;
+    private Boolean esNervioso;
 
-    public Profugo(Integer inocencia, Integer habilidad, boolean esNervioso) {
+    public Profugo(Integer inocencia, Integer habilidad, Boolean esNervioso) {
         this.inocencia = inocencia;
         this.habilidad = habilidad;
         this.esNervioso = esNervioso;
