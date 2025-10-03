@@ -1,5 +1,7 @@
 package ar.edu.unahur.obj2;
 
-public class ZonaTest {
+import org.junit.jupiter.api.Test;
 
+public class ZonaTest {
+    @Test
 }
